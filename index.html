@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Diktat App</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
+</head>
+
+<body>
+ <div class="titleHeader">
+  <h2>📢 Dansk Diktat App</h2>
+  <button id="toggleMenuBtn" onclick="toggleMenu()" title="Vis/skjul menu" >📋</button>
+ </div> 
+ 
+  <div class="speedV">
+    <label>🔊 Hastighed: <span id="speedValue">1.0</span>
+      <input type="range" id="speedSlider" min="0.5" max="2" step="0.1" value="1" />
+    </label>
+
+    <label for="volumeSlider">🔊 Lydstyrke: <span id="volumeValue">1.0</span>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.2">
+    </label>
+   
+    
+  </div>
+ 
+<!-- 🆕 Danish voice selector -->
+  <div id="progress" style="text-align:right; font-size: 0.9rem; color: #888;">✔ 0 / 0</div>
+
+
+
+  <div class="centered">
+    <select id="voiceSelect"></select>
+    <div class="">
+      <label for="categorySelect">📂 Vælg kategori:</label>
+      <select id="categorySelect"></select>
+      <span id="categoryLabel" style="margin-left: 10px; font-weight: bold;"></span>
+    </div>
+   
+  </div>
+
+
+
+  <div class="centered">
+    <div id="output">Er du klar til ordet? Skriv <strong>ja</strong>.</div>
+  </div>
+
+  <div class="centered">
+    <input type="text" id="userInput" placeholder="Skriv her..." autocomplete="off" spellcheck="false" autofocus />
+  </div>
+
+  <div class="centered">
+    <button onclick="handleInput()">Indsend</button>
+  </div>
+
+  <div class="centered">
+
+     <!-- Mode direkte med svare -->
+     <label style="display: inline-flex; align-items: stretch; margin-top: 15px; gap: 8px; white-space: nowrap;">
+      <input type="checkbox" id="autoModeToggleAnswer" />Tving korrekt svar før næste ord
+      
+    </label>
+    <!-- Automatisk diktat (spring feedback over) -->
+    <label style="display: inline-flex; align-items: stretch; gap: 8px; white-space: nowrap;">
+      <input type="checkbox" id="autoModeToggle" />
+      <span>Automatisk diktat (spring feedback over)</span>
+    </label>
+
+  </div>
+  <!-- 🧾 End-of-round menu -->
+  <div class="menuInfos" id="endMenu">
+    <h3 id="resultSummary">📊 Resultat</h3>
+    <div class="menuOptions" id="menuOptions">
+      <button onclick="redoFailed()">🔁 Prøv de fejlede ord igen</button><br><br>
+      <button onclick="continueSameCategory()">➡️ Fortsæt med samme kategori</button><br><br>
+      <!-- <button onclick="changeCategory()">📂 Skift kategori</button><br><br> -->
+      <button onclick="exitApp()">❌ Afslut</button>
+    </div>
+  </div>
+
+
+  <script  type="module" src="script.js"></script>
+</body>
+
+</html>

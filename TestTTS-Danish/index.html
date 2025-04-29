@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Danish TTS Test (FreeTTS)</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 400px;
+      margin: 60px auto;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔊 Dansk FreeTTS Test</h2>
+  <input type="text" id="text" placeholder="Skriv et ord..." />
+  <button onclick="playTTS()">Afspil</button>
+  <br><br>
+  <audio id="ttsAudio" controls style="display: none;"></audio>
+
+
+ <script>
+    async function playTTS() {
+      const text = document.getElementById('text').value.trim();
+      if (!text) return;
+  
+      const encoded = encodeURIComponent(text);
+      const apiKey = 'b7331afbf00f4695ae82de0ae461464e'; // 🔁 Replace with your actual key
+  
+      const url = `https://api.voicerss.org/?key=${apiKey}&hl=da-dk&src=${encoded}`;
+  
+      const audio = document.getElementById('ttsAudio');
+      audio.src = url;
+      audio.play();
+    }
+  </script>
+  
+</body>
+</html>

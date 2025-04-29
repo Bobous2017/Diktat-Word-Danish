@@ -1,0 +1,44 @@
+TODO
+
+1  Voice selector dropdown (Danish only)******************—-----------------------------✅
+2  Auto mode toggle (skip “ja” prompts)******************—--------------------------------✅      
+3  Retry failed words before restart***********************—--------------------------------✅
+4  Word pool random, no repeats ***********************—---------------------------------✅
+5  Manual repeat with Alt+Enter   ***********************—---------------------------------✅
+6  Clean answer checker with feedback ***********************—------------------------✅
+7  Score counter (right/wrong)******************************—-------------------------------⬜
+8  Timer (how fast user types)******************************—-------------------------------⬜
+9  Difficulty grouping*****************************************—-------------------------------⬜
+10 Export missed words (save to file)**********************—-------------------------------⬜
+11 Voice rotation feature******************************************—------------------------⬜
+
+- Add indicators how many words is loaded,  1/n,  it you pass the word then it goes 2/n-----(Done)
+
+after completion a Menu pops up shows 4 option: 
+give feedback,  Du har bestået med 4/n,  
+> Redo the fails words, if there is any,  if its not. this line is hidden
+> Continue with the same category
+> change category (for now this line is just link)
+> Exit
+
+✅ Step 1: Finish Line Menu UI
+We'll build a menu that pops up when all words are done, showing:
+
+✅ “Du har bestået med 4/5”
+
+✅ Button: Redo failed words (only if any failed)
+
+✅ Button: Continue with same category
+
+✅ Button: Change category (for now: placeholder link)
+
+✅ Button: Exit (could reload or go to start screen)
+
+➡️ We'll make it as a hidden <div> that becomes visible at the end.
+
+
+- Categorier dropdown.
+FartTøjer, skole, hus,  Arbejde, Hospitale, Frugt, Kryddery, luftavn, Besøg, Invitation, Gæster,
+ComboMix_1, ComboMix_2, ComboMix_3
+
+
