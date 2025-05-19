@@ -31,6 +31,7 @@ let originalFails = 0; // Track how many total fails happened
 let words = []; // ← This is the correct global setup
 // 🌀 Word pool used in the current round (gets emptied as user answers)
 let wordPool = [...words];   // Copy of words array, to prevent direct mutation
+//let wordPool = []; // ✅ Only initialize when words are ready
 
 const categories = {
     huse: 'huse',
@@ -80,7 +81,7 @@ async function loadCategory(name) {
 }
 initCategoryDropdown();
 categorySelect.value = 'huse'; // Default category key
-//loadCategory('huse'); // 👈 force trigger manually
+loadCategory('huse'); // 👈 force trigger manually
 
 // Connect the slider to speech synthesis
 const volumeSlider = document.getElementById('volumeSlider');
@@ -192,7 +193,7 @@ function startDictation() {
     // 📝 Prep the input field for next answer
     checkingAnswer = true;  // App is now waiting for your input
     output.innerHTML = "Skriv det ord du hørte:";  // Instruction to user
-    output.innerHTML = "Tryk <strong>Alt + P</strong> for at høre ordet med Read Aloud";
+    output.innerHTML = "Tryk <strong>Alt + Enter</strong> for at høre ordet med Read Aloud";
 
     userInput.value = '';  // Clear the input box
 
