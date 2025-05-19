@@ -64,7 +64,7 @@ function initCategoryDropdown() {
 
 async function loadCategory(name) {
   try {
-    const module = await import(`/category/${name}.js`);
+    const module = await import(`./category/${name}.js`);
     words = module.words;
     wordPool = [...words];
     totalWords = wordPool.length;
